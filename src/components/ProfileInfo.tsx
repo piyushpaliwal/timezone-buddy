@@ -1,8 +1,11 @@
-import { useMsGraphMe } from "../hooks/useGraph"
+import React, { type FC } from "react";
+import { useMsGraphMe } from "../hooks/useGraph";
 
-export function ProfileInfo(){
-    const profile = useMsGraphMe()
-    return <>
-        {profile.firstname} {profile.lastname}
+export const ProfileInfo: FC = () => {
+  const profile = useMsGraphMe();
+  return (
+    <>
+      {profile.firstname} {profile.lastname}
     </>
-}
+  );
+};

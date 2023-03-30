@@ -1,6 +1,6 @@
-export interface Profile{
-    firstname:string;
-    lastname:string;
-    email:string;
-    id:string;
+export interface Profile {
+  firstname: string;
+  lastname: string;
+  email: string;
+  id: string;
 }

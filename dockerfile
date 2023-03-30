@@ -19,5 +19,3 @@ COPY --from=build-env /app/static ./static
 COPY ./Build/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 8080
-
-

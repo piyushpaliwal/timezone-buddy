@@ -8,18 +8,18 @@ metadata:
   name: ingress-nginx-kubernetes
 spec:
   rules:
-  - host: timezone-buddy.local
-    http:
-      paths:
-      - path: /app(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: front-timezone-buddy
-            port:
-              number: 8080
+    - host: timezone-buddy.local
+      http:
+        paths:
+          - path: /app(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: front-timezone-buddy
+                port:
+                  number: 8080
   ingressClassName: nginx
   tls:
-  - hosts:
-    - timezone-buddy.local
-    secretName: domaincert
+    - hosts:
+        - timezone-buddy.local
+      secretName: domaincert
