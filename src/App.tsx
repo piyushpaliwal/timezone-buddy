@@ -1,33 +1,25 @@
-import { useState } from "react";
-import { MsalProvider } from "@azure/msal-react";
-import { IPublicClientApplication } from "@azure/msal-browser";
 import "./App.css";
-
-
-
-import { AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/msal-react";
+import { AuthenticatedTemplate, UnauthenticatedTemplate, useIsAuthenticated, useMsal } from "@azure/msal-react";
 import { SignInButton } from "./components/SignInButton";
-import { ProfileInfo } from "./components/ProfileInfo";
+import { CurrentProfileInfo } from "./components/CurrentProfileInfo";
+import { Form } from "react-bootstrap";
+import { MailboxSettingsForm } from "./components/MailboxSettingsForm";
+import { useMsGraphMe } from "./hooks/useGraph";
+import React, { useState } from "react";
+import { UserAuthenticated } from "./components/UserAuthenticated";
 
-type AppProps = {
-    pca: IPublicClientApplication;
-};
-
-
-function App({ pca }: AppProps) {
-    const [count, setCount] = useState(0);
+function App() {
+    const [login, setLogin] = useState<string>("");
     return (
-        <MsalProvider instance={pca}>
-             
-            <div className="App">
-
-              
-                <UnauthenticatedTemplate><SignInButton></SignInButton></UnauthenticatedTemplate>
-                <AuthenticatedTemplate>
-                <p>You are signed in! <ProfileInfo></ProfileInfo></p>
+        <React.Fragment>
+            <UnauthenticatedTemplate>
+                <Form.Control type="text" placeholder="Your email address" id="loginHint" onChange={(e) => setLogin(e.target.value)}></Form.Control>
+                <SignInButton loginHint={login}></SignInButton>
+            </UnauthenticatedTemplate>
+            <AuthenticatedTemplate>
+               <UserAuthenticated></UserAuthenticated>
             </AuthenticatedTemplate>
-            </div>
-        </MsalProvider>
+        </React.Fragment>
     );
 }
 

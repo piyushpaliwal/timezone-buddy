@@ -3,4 +3,6 @@ export interface Profile{
     lastname:string;
     email:string;
     id:string;
+    //country:string;
+    //city:string;
 }
