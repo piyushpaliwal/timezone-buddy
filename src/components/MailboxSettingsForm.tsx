@@ -4,7 +4,9 @@ export interface MailBoxSettingsProps {
   idOrUpn: string
 }
 
-export function MailboxSettingsForm(props: { model: MailboxSettings }) {
+export const MailboxSettingsForm = (props: {
+  model: MailboxSettings
+}): JSX.Element => {
   return (
     <p>
       Timezone - {props.model.timezone}

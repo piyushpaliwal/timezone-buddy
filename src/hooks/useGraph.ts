@@ -35,7 +35,7 @@ export const acquireAccessToken = async () => {
   return authResult.accessToken
 }
 
-export function useMsGraphMe() {
+export const useMsGraphMe = () => {
   const { instance, accounts, inProgress } = useMsal()
 
   const [profile, setProfile] = useState<IResponse<Profile>>({
@@ -93,7 +93,7 @@ export function useMsGraphMe() {
   return { profile, mailboxSettings }
 }
 
-export function useGraphMailboxSettings(idOrUpn: string) {
+export const useGraphMailboxSettings = (idOrUpn: string) => {
   const [mailboxSettings, setMailboxSettings] = useState<
     IResponse<MailboxSettings>
   >({

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { UserContext } from '../UserContext'
 
-export function CurrentProfileInfo() {
+export const CurrentProfileInfo = (): JSX.Element => {
   const ctx = useContext(UserContext)
   return (
     <>

@@ -27,7 +27,7 @@ msalInstance.addEventCallback((event: EventMessage) => {
   }
 })
 
-const AppProvider = () => (
+const AppProvider = (): JSX.Element => (
   <MsalProvider instance={msalInstance}>
     <App />
   </MsalProvider>

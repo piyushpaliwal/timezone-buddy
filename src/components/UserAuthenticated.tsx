@@ -4,7 +4,7 @@ import { useMsGraphMe } from '../hooks/useGraph'
 import { CurrentProfileInfo } from './CurrentProfileInfo'
 import { MailboxSettingsForm } from './MailboxSettingsForm'
 
-export function UserAuthenticated() {
+export const UserAuthenticated = (): JSX.Element => {
   const isAuthenticated = useIsAuthenticated()
   const { profile, mailboxSettings } = useMsGraphMe()
   return (

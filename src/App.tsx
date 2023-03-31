@@ -13,7 +13,7 @@ import { useMsGraphMe } from './hooks/useGraph'
 import React, { useState } from 'react'
 import { UserAuthenticated } from './components/UserAuthenticated'
 
-function App() {
+const App = (): JSX.Element => {
   const [login, setLogin] = useState<string>('')
   return (
     <React.Fragment>

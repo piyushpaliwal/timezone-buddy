@@ -2,10 +2,10 @@ import { Button } from 'react-bootstrap'
 import { useMsal } from '@azure/msal-react'
 import { loginRequest } from '../authConfig'
 
-export const SignInButton = (props: { loginHint: string }) => {
+export const SignInButton = (props: { loginHint: string }): JSX.Element => {
   const { instance } = useMsal()
 
-  const handleLogin = (loginType: any) => {
+  const handleLogin = (loginType: any): void => {
     if (loginType === 'redirect') {
       instance
         .loginRedirect({ ...loginRequest, loginHint: props.loginHint })

@@ -1,8 +1,4 @@
-import {
-  type Configuration,
-  PopupRequest,
-  type RedirectRequest,
-} from '@azure/msal-browser'
+import { type Configuration, type RedirectRequest } from '@azure/msal-browser'
 
 // Config object to be passed to Msal on creation
 export const msalConfig: Configuration = {
