@@ -24,7 +24,7 @@ helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.git
 
 # Self signed cert for ingress
 
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout keyfile -out certfile 
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout keyfile -out certfile
 
 kubectl create secret tls domaincert --key .\keyfile --cert .\certfile
 
@@ -34,10 +34,6 @@ in C:\Windows\System32\drivers\etc\hosts add entry : 127.0.0.1 timezone-buddy.lo
 
 kubectl apply -f K8s/ingress.yaml
 
-
 # K8s image deployment
 
-helm upgrade --install --namespace=local front-timezone-buddy .  --set image.tag="1.0.0"
-
-
-
+helm upgrade --install --namespace=local front-timezone-buddy . --set image.tag="1.0.0"
