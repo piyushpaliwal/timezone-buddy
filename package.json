@@ -10,30 +10,34 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm run format && pnpm run lint"
-    }
+  "lint-staged": {
+    "*.{css,md,json,html}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@azure/msal-browser": "^2.34.0",
     "@azure/msal-react": "^1.5.4",
-    "@types/react-bootstrap": "^0.32.32",
-    "bootstrap": "^5.2.3",
     "install": "^0.13.0",
     "npm": "^9.6.2",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
@@ -43,8 +47,11 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "postcss": "^8.4.21",
     "prettier": "2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.6",
+    "tailwindcss": "^3.3.1",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vite-plugin-mkcert": "^1.13.4"

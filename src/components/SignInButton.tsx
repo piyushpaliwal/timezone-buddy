@@ -1,4 +1,3 @@
-import { Button } from 'react-bootstrap'
 import { useMsal } from '@azure/msal-react'
 import { loginRequest } from '../authConfig'
 
@@ -15,14 +14,13 @@ export const SignInButton = (props: { loginHint: string }): JSX.Element => {
     }
   }
   return (
-    <Button
-      variant='secondary'
-      className='ml-auto'
+    <button
+      className='mx-auto h-10 w-40 rounded-full bg-indigo-600 text-white hover:bg-indigo-800'
       onClick={() => {
         handleLogin('redirect')
       }}
     >
       Sign in
-    </Button>
+    </button>
   )
 }
