@@ -9,6 +9,6 @@ export default defineConfig({
   },
   plugins: [react(), mkcert()],
   build: {
-    outDir: '../static',
+    outDir: './static',
   },
 })
