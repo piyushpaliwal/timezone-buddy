@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/consistent-type-assertions */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useState, useEffect } from 'react'
 import { graphConfig, loginRequest, msalConfig } from '../authConfig'
 import { useMsal } from '@azure/msal-react'
 import { type Profile } from '../models/Profile'
-import { LocaleInfo, type MailboxSettings } from '../models/MailboxSettings'
+import { type MailboxSettings } from '../models/MailboxSettings'
 
 import { PublicClientApplication } from '@azure/msal-browser'
 export interface IResponse<T> {
