@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 jobs:
-  linters:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -46,6 +46,10 @@ jobs:
       - name: Linting
         id: lint
         run: pnpm lint
+
+      - name: Fix linting errors
+        run: pnpm lint:fix
+        if: ${{ steps.lint.outputs.lint == 'true' }}
 
       - name: Formatting
         run: pnpm format
